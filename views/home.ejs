@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+<h1>Home</h1>
+
+<p>
+  <%= _homeStartingContent %>
+</p>
+
+<% for(let i = 0; i < _posts.length; i++){ %>
+  <% const MAXCHARACTERS = 100; %>
+<h1><%= _posts[i].title %></h1>
+<p>
+  <%= _posts[i].msg.substring(0, MAXCHARACTERS) + " ..."; %>
+  <a href="/posts/<%= _posts[i].title %>">Read More</a>
+</p>
+<% } %>
+<%- include('partials/footer'); -%>
